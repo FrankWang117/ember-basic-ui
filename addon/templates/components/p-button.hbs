@@ -1,0 +1,8 @@
+{{#if hasBlock}}
+	{{yield}}
+{{else}}
+	{{#if icon}}
+		<img class="btn-icon" src={{icon}} alt={{icon-alt}}>
+	{{/if}}
+	{{content}}
+{{/if}}

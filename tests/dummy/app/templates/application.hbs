@@ -1,0 +1,21 @@
+<h2 id="title">Welcome to ember-basic-ui</h2>
+<section class="btn-container">
+	{{p-button}}
+	<hr>
+	{{p-button disabled=true content="disabled button"}}
+	<hr>
+	{{p-button content="block button" block=true}}
+	<hr>
+	{{p-button type="primary"}}
+	{{p-button type="secondary"}}
+	{{p-button type="danger"}}
+	{{p-button type="default" disabled=true}}
+	{{p-button type="primary" icon="https://s3.amazonaws.com/uifaces/faces/twitter/damenleeturks/128.jpg"}}
+	<hr>
+	{{p-button type="primary" reverse=true}}
+	{{p-button type="secondary" reverse=true}}
+	{{p-button type="danger" reverse=true}}
+	{{p-button type="default" reverse=true disabled=true}}
+	{{p-button type="primary" reverse=true icon="https://s3.amazonaws.com/uifaces/faces/twitter/damenleeturks/128.jpg"}}
+</section>
+{{outlet}}
