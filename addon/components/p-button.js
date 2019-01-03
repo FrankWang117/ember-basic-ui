@@ -7,7 +7,7 @@ export default Component.extend({
 	content: 'default',
 	classNames: ['p-btn'],
 	classNameBindings: ['block:btn-block', 'type', 'reverse'],
-	attributeBindings: ['disabled',],
+	attributeBindings: ['disabled'],
 
 	/**
 	 * Property to block level buttons
@@ -91,22 +91,22 @@ export default Component.extend({
 		// 	);
 		//   }
 		// }
-		if (true) {
-			let promise = (action)(this.get('value'));
-			if (promise && typeof promise.then === 'function' && !this.get('isDestroyed')) {
-				this.set('state', 'pending');
-				promise.then(() => {
-					if (!this.get('isDestroyed')) {
-						this.set('state', 'fulfilled');
-					}
-				}, () => {
-					if (!this.get('isDestroyed')) {
-						this.set('state', 'rejected');
-					}
-				}
-				);
-			}
-		}
+		// if (true) {
+		// 	let promise = (action)(this.get('value'));
+		// 	if (promise && typeof promise.then === 'function' && !this.get('isDestroyed')) {
+		// 		this.set('state', 'pending');
+		// 		promise.then(() => {
+		// 			if (!this.get('isDestroyed')) {
+		// 				this.set('state', 'fulfilled');
+		// 			}
+		// 		}, () => {
+		// 			if (!this.get('isDestroyed')) {
+		// 				this.set('state', 'rejected');
+		// 			}
+		// 		}
+		// 		);
+		// 	}
+		// }
 		return this.get('bubble');
-	},
+	}
 });
