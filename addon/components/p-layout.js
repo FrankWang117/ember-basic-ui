@@ -1,95 +1,104 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
+import { equal } from '@ember/object/computed';
 import layout from '../templates/components/p-layout';
 
 export default Component.extend({
 	layout,
-	rowBasic: computed('direction', function () {
-		return this.get('direction') === 'row';
+	tagName: 'section',
+	/**
+	 * 设置是否折行.
+	 *
+	 * @property wrap
+	 * @type boolean
+	 * @default false
+	 * @private
+	 */
+	isWrap: equal('wrap', true),
+	/**
+	 * 设置多行情况下的对齐方式.
+	 *
+	 * @property multi
+	 * @type string
+	 * @default 'stretch'
+	 * @private
+	 */
+	multiRow: computed('multi', function () {
+		let multi = this.get('multi');
+
+		switch (multi) {
+		case 'start':
+			return 'mul-s';
+		case 'end':
+			return 'mul-e';
+		case 'center':
+			return 'mul-c';
+		case 'between':
+			return 'mul-b';
+		case 'around':
+			return 'mul-a';
+		default:
+			return 'mul-d';
+		}
 	}),
-	colBasic: computed('direction', function () {
-		return this.get('direction') === 'col';
-	}),
+	/**
+	 * 决定主轴上的对齐方式.
+	 *
+	 * @property main
+	 * @type string
+	 * @default 'start'
+	 * @private
+	 */
 	mainAxis: computed('direction', 'main', function () {
 		let direction = this.get('direction'),
 			justify = this.get('main');
 
-		if (direction !== 'row') {
-			switch (justify) {
-			case 'start':
-				return 'col-js';
-			case 'end':
-				return 'col-je';
-			case 'center':
-				return 'col-jc';
-			case 'between':
-				return 'col-jb';
-			case 'around':
-				return 'col-ja';
-			default:
-				break;
-			}
-		} else {
-			switch (justify) {
-			case 'start':
-				return 'rowJS';
-			case 'end':
-				return 'rowJE';
-			case 'center':
-				return 'rowJC';
-			case 'between':
-				return 'rowJB';
-			case 'around':
-				return 'rowJA';
-			default:
-				break;
-			}
+		switch (justify) {
+		case 'end':
+			return direction !== 'col' ? 'row-me' : 'col-me';
+		case 'center':
+			return direction !== 'col' ? 'row-mc' : 'col-mc';
+		case 'between':
+			return direction !== 'col' ? 'row-mb' : 'col-mb';
+		case 'around':
+			return direction !== 'col' ? 'row-ma' : 'col-ma';
+		default:
+			return direction !== 'col' ? 'row-ms' : 'col-ms';
 		}
 	}),
+	/**
+	 * 决定交叉轴上的对齐方式.
+	 *
+	 * @property cross
+	 * @type string
+	 * @default 'stretch'
+	 * @private
+	 */
 	crossAxis: computed('direction', 'cross', function () {
 		let direction = this.get('direction'),
 			aliginItems = this.get('cross');
 
-		if (direction !== 'row') {
-			switch (aliginItems) {
-			case 'start':
-				return 'col-cs';
-			case 'end':
-				return 'col-ce';
-			case 'center':
-				return 'col-cc';
-			case 'stretch':
-				return 'col-ct';
-			case 'baseline':
-				return 'col-cb';
-			default:
-				break;
-			}
-		} else {
-			switch (aliginItems) {
-			case 'start':
-				return 'row-cs';
-			case 'end':
-				return 'row-ce';
-			case 'center':
-				return 'row-cc';
-			case 'stretch':
-				return 'row-ct';
-			case 'baseline':
-				return 'row-cb';
-			default:
-				break;
-			}
+		switch (aliginItems) {
+		case 'start':
+			return direction !== 'col' ? 'row-cs' : 'col-cs';
+		case 'end':
+			return direction !== 'col' ? 'row-ce' : 'col-ce';
+		case 'center':
+			return direction !== 'col' ? 'row-cc' : 'col-cc';
+		case 'baseline':
+			return direction !== 'col' ? 'row-cb' : 'col-cb';
+		default:
+			return direction !== 'col' ? 'row-cd' : 'col-cd';
 		}
 	}),
 	// eslint-disable-next-line ember/avoid-leaking-state-in-ember-objects
-	localClassNameBindings: [
-		'rowBasic:flex-rb',
+	classNameBindings: [
+		'flexDirection',
 		'mainAxis',
 		'crossAxis',
-		'colBasic:flex-cb'
+		'isWrap',
+		'multiRow'
 	]
 }).reopenClass({
-	positionalParams: ['direction', 'main', 'cross', 'multi']
+	positionalParams: ['direction', 'main', 'cross', 'wrap', 'multi']
 });
-

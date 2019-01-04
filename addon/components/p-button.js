@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 import layout from '../templates/components/p-button';
 
 export default Component.extend({
@@ -17,10 +18,20 @@ export default Component.extend({
 	 * @public
 	 */
 	block: false,
-
+	defaultText: null,
+	text: computed('defaultText', function () {
+		return this.get('defaultText');
+	}),
+	/**
+	 * bubble?
+	 * @property bubble
+	 * @type boolean
+	 * @default false
+	 * @public
+	 */
+	bubble: false,
 	/**
 	 * Property to disable the button
-	 * 
 	 * @property disabled
 	 * @type boolean
 	 * @default false
@@ -44,7 +55,7 @@ export default Component.extend({
 	 * @param {*} value
 	 * @public
 	 */
-	onClick: null,
+	onClick() { },
 
 	/**
 	 * Property to reverse button style for the background color to dark
@@ -71,9 +82,8 @@ export default Component.extend({
 		let action = this.get('onClick');
 		// let preventConcurrency = this.get('preventConcurrency');
 
-		if (action === null) {
-			return;
-		}
+		action();
+
 
 		// if (!preventConcurrency || !this.get('isPending')) {
 		//   let promise = (action)(this.get('value'));
