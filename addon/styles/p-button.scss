@@ -23,6 +23,10 @@
 	text-align: center;
 	cursor: pointer;
 
+	&:disabled {
+		cursor: not-allowed;
+	}
+
 	&.btn-block {
 		display: block;
 		width: 100%;

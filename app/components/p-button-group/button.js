@@ -1,0 +1,1 @@
+export { default } from 'ember-basic-ui/components/p-button-group/button';

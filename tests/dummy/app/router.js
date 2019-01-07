@@ -7,6 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('p-button');
+  this.route('p-layout');
+  this.route('p-button-group');
 });
 
 export default Router;
