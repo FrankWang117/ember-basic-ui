@@ -1,0 +1,52 @@
+<section class="layout-container">
+	<h3>p-layout 的使用方法</h3>
+	<h3>
+		布局器有五个非必选属性,包括: direction / main / cross / wrap / multi;
+	</h3>
+	<ul>
+		<li>direction: 目前支持
+			{{#p-button onClick=(action (mut direction) 'col')}}col{{/p-button}}
+			以及
+			{{#p-button onClick=(action (mut direction) 'row')}}row{{/p-button}}
+			;默认为 'row'.
+		</li>
+		<li>main: 定义元素在主轴 (main) 上的排列方式.
+			支持的值有:
+			{{#p-button onClick=(action (mut main) 'start')}}start{{/p-button}}
+			{{#p-button onClick=(action (mut main) 'end')}}end{{/p-button}}
+			{{#p-button onClick=(action (mut main) 'center')}}center{{/p-button}}
+			{{#p-button onClick=(action (mut main) 'between')}}between{{/p-button}}
+			{{#p-button onClick=(action (mut main) 'around')}}around{{/p-button}}
+			;默认值: 'start'.
+		</li>
+		<li>cross: 定义元素在交叉轴 (cross Axis) 上的排列方式.支持的值有:
+			{{#p-button onClick=(action (mut cross) 'start')}}start{{/p-button}}
+			{{#p-button onClick=(action (mut cross) 'end')}}end{{/p-button}}
+			{{#p-button onClick=(action (mut cross) 'center')}}center{{/p-button}}
+			{{#p-button onClick=(action (mut cross) 'stretch')}}stretch{{/p-button}}
+			{{#p-button onClick=(action (mut cross) 'baseline')}}baseline{{/p-button}}
+			;默认值: 'stretch'.
+		</li>
+		<li>wrap: 定义是否换行.默认为 false.
+			{{#p-button onClick=(action (mut wrap) true)}}Wrap to true{{/p-button}}
+			{{#p-button onClick=(action (mut wrap) false)}}Wrap to false{{/p-button}}
+		</li>
+		<li>multi: 定义多行的排列方式,在 wrap 为false 的时候,不起作用.支持的值有:
+			{{#p-button onClick=(action (mut multi) 'start')}}start{{/p-button}}
+			{{#p-button onClick=(action (mut multi) 'end')}}end{{/p-button}}
+			{{#p-button onClick=(action (mut multi) 'center')}}center{{/p-button}}
+			{{#p-button onClick=(action (mut multi) 'between')}}between{{/p-button}}
+			{{#p-button onClick=(action (mut multi) 'around')}}around{{/p-button}}
+			{{#p-button onClick=(action (mut multi) 'stretch')}}stretch{{/p-button}}
+			;默认值:
+			'stretch'.</li>
+	</ul>
+	{{#p-layout direction main cross wrap multi class="layout-demo"}}
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+	{{/p-layout}}
+</section>

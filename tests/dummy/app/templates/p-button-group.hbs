@@ -1,0 +1,10 @@
+<section>
+	<h3>p-button-group 的使用方法</h3>
+	{{#p-button-group value=buttonGroupValue type="radio" vertical=false onChange=(action (mut buttonGroupValue)) as |bg|}}
+		{{!-- {{#p-button-group value=buttonGroupValue type="radio" onChange=(action 'changeValue') as |bg|}} --}}
+		{{#bg.button type="default" value=1}}1{{/bg.button}}
+		{{#bg.button type="default" value=2}}second Choose{{/bg.button}}
+		{{#bg.button type="default" value=3}}3{{/bg.button}}
+	{{/p-button-group}}
+	You selected: {{buttonGroupValue}}!
+</section>

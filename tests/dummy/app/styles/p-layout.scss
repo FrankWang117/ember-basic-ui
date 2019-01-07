@@ -1,0 +1,48 @@
+.layout-container {
+
+	.layout-demo {
+		width: 100%;
+		min-height: 220px;
+		background-color: rgba(#000, 0.3);
+
+		div {
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			font-size: 24px;
+			color: #FFF;
+			text-align: center;
+		}
+
+		& div:first-child {
+			// height: 140px;
+			background-color: lightgray;
+		}
+
+		& div:nth-child(2) {
+			// height: 200px;
+			background-color: lightcoral;
+		}
+
+		& div:nth-child(3) {
+			// height: 180px;
+			background-color: lightseagreen;
+		}
+
+		& div:nth-child(4) {
+			// height: 120px;
+			background-color: lightcyan;
+		}
+
+		& div:nth-child(5) {
+			// height: 140px;
+			background-color: lightsalmon;
+		}
+
+		& div:last-child {
+			// height: 160px;
+			background-color: orange;
+		}
+	}
+
+}

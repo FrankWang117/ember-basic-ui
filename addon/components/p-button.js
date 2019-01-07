@@ -7,7 +7,7 @@ export default Component.extend({
 	tagName: 'button',
 	content: 'default',
 	classNames: ['p-btn'],
-	classNameBindings: ['block:btn-block', 'type', 'reverse'],
+	classNameBindings: ['block:btn-block', 'type', 'reverse', 'active'],
 	attributeBindings: ['disabled'],
 
 	/**
@@ -23,7 +23,15 @@ export default Component.extend({
 		return this.get('defaultText');
 	}),
 	/**
-	 * bubble?
+	 * @property active
+	 * @type boolean
+	 * @default false
+	 * @public
+	 */
+	active: false,
+	value: null,
+	/**
+	 * bubble
 	 * @property bubble
 	 * @type boolean
 	 * @default false
@@ -82,7 +90,7 @@ export default Component.extend({
 		let action = this.get('onClick');
 		// let preventConcurrency = this.get('preventConcurrency');
 
-		action();
+		action(this.get('value'));
 
 
 		// if (!preventConcurrency || !this.get('isPending')) {
