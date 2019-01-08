@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('p-button');
   this.route('p-layout');
   this.route('p-button-group');
+  this.route('p-dropdown');
 });
 
 export default Router;

@@ -1,0 +1,11 @@
+{{!-- <option value="a">a</option>
+<option value="b">b</option>
+<option value="c">c</option> --}}
+{{!-- <select name="select" id="selected" onchange={{action change}}>
+	{{#each options as |item|}}
+		<option value={{item.id}}>{{item.value}}</option>
+	{{/each}}
+</select> --}}
+{{yield
+	(hash option=(component 'p-dropdown/p-option' selectedId=selectedId reBuild=(action 'reBuildOption')))
+}}

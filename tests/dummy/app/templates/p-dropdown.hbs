@@ -1,0 +1,11 @@
+<section>
+	<h3>p-dropdown 的使用方法</h3>
+	{{!-- {{#p-dropdown selected=option as |pd|}}
+		{{#each options as |item|}}
+			{{#pd.option value=item}}
+				{{item.label}}
+			{{/pd.option}}
+		{{/each}}
+	{{/p-dropdown}} --}}
+	{{p-dropdown options=options change=(action 'optionChange')}}
+</section>
