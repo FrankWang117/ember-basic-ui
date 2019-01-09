@@ -4,17 +4,19 @@ import { A } from '@ember/array';
 export default Controller.extend({
 	init() {
 		this._super(...arguments);
-		this.set('options', A([
-			{ id: 'a', value: 'a' },
-			{ id: 'b', value: 'b' },
-			{ id: 'c', value: 'c' },
-		]))
+		this.set('readyOptions', A([
+			{ id: 1, value: 'a' },
+			{ id: 2, value: 'b' },
+			{ id: 3, value: 'c' },
+		]));
+		// this.set('option', 1);
 	},
-	actions: {
-		optionChange(value) {
-			console.log('--')
-			console.log(value)
 
+	actions: {
+		changeOption(value) {
+			console.table(value);
+			console.log('in controller ');
+			this.set('option', value);
 		}
 	}
 });
