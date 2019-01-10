@@ -3,21 +3,18 @@
 	<aside>
 		<nav>
 			<ol>
-				<li>{{#link-to "p-layout"}}
-						layout
-					{{/link-to}}</li>
-				<li>{{#link-to "p-button"}}
-						button
-					{{/link-to}}
-				</li>
-				<li>{{#link-to "p-button-group"}}
-						button-group
-					{{/link-to}}
-				</li>
-				<li>{{#link-to "p-dropdown"}}
-						dropdown
-					{{/link-to}}
-				</li>
+				{{#link-to "p-layout" tagName='li'  activeClass="nav-active"}}
+					layout
+				{{/link-to}}
+				{{#link-to "p-button" tagName='li' activeClass="nav-active"}}
+					button
+				{{/link-to}}
+				{{#link-to "p-button-group" tagName='li' activeClass="nav-active"}}
+					button-group
+				{{/link-to}}
+				{{#link-to "p-dropdown" tagName='li' activeClass="nav-active"}}
+					dropdown
+				{{/link-to}}
 			</ol>
 		</nav>
 	</aside>
