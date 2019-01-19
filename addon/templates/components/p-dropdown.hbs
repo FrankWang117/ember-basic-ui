@@ -1,0 +1,8 @@
+{{yield
+  (hash
+    option=(component "p-dropdown/p-option" 
+	select=this 
+	register=(action 'registerOption') 
+	unregister=(action 'unregisterOption'))
+  )
+}}
