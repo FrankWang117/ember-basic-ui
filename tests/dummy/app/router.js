@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('p-layout');
   this.route('p-button-group');
   this.route('p-dropdown');
+  this.route('p-default');
 });
 
 export default Router;

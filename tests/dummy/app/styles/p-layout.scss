@@ -1,4 +1,5 @@
 .layout-container {
+	width: 100%;
 
 	.layout-demo {
 		width: 100%;
@@ -6,6 +7,7 @@
 		background-color: rgba(#000, 0.3);
 
 		div {
+			// flex: 1;
 			width: 100px;
 			height: 100px;
 			line-height: 100px;
@@ -37,6 +39,16 @@
 		& div:nth-child(5) {
 			// height: 140px;
 			background-color: lightsalmon;
+		}
+
+		& div:nth-child(6) {
+			// height: 140px;
+			background-color: lightgoldenrodyellow;
+		}
+
+		& div:nth-child(7) {
+			// height: 140px;
+			background-color: lightpink;
 		}
 
 		& div:last-child {
