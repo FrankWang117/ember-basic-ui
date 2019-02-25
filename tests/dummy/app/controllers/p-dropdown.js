@@ -15,7 +15,6 @@ export default Controller.extend({
 	actions: {
 		changeOption(value) {
 			console.table(value);
-			console.log('in controller ');
 			this.set('option', value);
 		}
 	}
