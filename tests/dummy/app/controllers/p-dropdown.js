@@ -9,7 +9,6 @@ export default Controller.extend({
 			{ id: 2, value: 'b' },
 			{ id: 3, value: 'c' },
 		]));
-		// this.set('option', 1);
 	},
 
 	actions: {

@@ -8,7 +8,11 @@
 		{{#p-button value=vertical type="default" onClick=(action 'changeVertical' )}}changeVertical{{/p-button}}
 		可将其变为垂直排列。
 	</p>
-	{{#p-button-group value=buttonGroupValue type="radio" vertical=vertical onChange=(action (mut buttonGroupValue)) as |bg|}}
+	{{#p-button-group
+		value=buttonGroupValue 
+		type="radio" 
+		vertical=vertical 
+		onChange=(action (mut buttonGroupValue)) as |bg|}}
 		{{!-- {{#p-button-group value=buttonGroupValue type="radio" onChange=(action 'changeValue') as |bg|}} --}}
 		{{#bg.button type="default" value=1}}1{{/bg.button}}
 		{{#bg.button type="default" value=2}}second button long long long{{/bg.button}}

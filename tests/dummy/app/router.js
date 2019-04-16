@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('p-button-group');
   this.route('p-dropdown');
   this.route('p-default');
+  this.route('charts');
 });
 
 export default Router;

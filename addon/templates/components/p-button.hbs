@@ -1,23 +1,5 @@
-{{!-- {{#if hasBlock}}
-	{{yield hash=(
-
-	)}}
-{{else}} --}}
 {{#if icon}}
 	<img class="btn-icon" src={{icon}} alt={{icon-alt}}>
 {{/if}}
 {{text}}
 {{yield}}
-{{!-- {{/if}} --}}
-{{!-- {{#if icon}}
-	<i class={{icon}}></i>
-{{/if}}
-{{text}}
-{{yield
-  (hash
-    isFulfilled=isFulfilled
-    isPending=isPending
-    isRejected=isRejected
-    isSettled=isSettled
-  )
-}} --}}

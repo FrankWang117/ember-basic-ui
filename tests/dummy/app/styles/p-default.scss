@@ -1,5 +1,4 @@
 table {
-	color: red;
 
 	tr:first-child {
 		font-size: 24px;
@@ -11,5 +10,10 @@ table {
 
 	tr:last-child {
 		font-size: 14px;
+	}
+
+	td {
+		height: 32px;
+		line-height: 32px;
 	}
 }

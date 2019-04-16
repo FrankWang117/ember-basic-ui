@@ -1,3 +1,7 @@
+@import './p-layout.scss';
+@import './p-default.scss';
+@import './charts.scss';
+
 html,
 body,
 body>.ember-view {
@@ -94,5 +98,3 @@ h3 {
 		padding: 0 20px;
 	}
 }
-
-@import './p-layout.scss';
