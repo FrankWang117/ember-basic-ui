@@ -2,7 +2,7 @@
 	<h3>p-button 的使用方法</h3>
 	<h4>基础用法</h4>
 	{{#p-button}}default{{/p-button}}
-	{{#p-button type="primary"}}Primary{{/p-button}}
+	{{#p-button type="primary" }}Primary{{/p-button}}
 	<hr>
 	<h4>禁止属性 disabled</h4>
 	{{#p-button disabled=true}}disabled butto{{/p-button}}
@@ -16,9 +16,7 @@
 	{{#p-button type="danger" onClick=(action 'submit')}}danger{{/p-button}}
 	{{#p-button type="default" disabled=false onClick=(action 'submit')}}default{{/p-button}}
 	{{#p-button type="default" disabled=true}}disabled default{{/p-button}}
-	{{#p-button type="primary"
-		onClick=(action 'submit')
-		icon="https://s3.amazonaws.com/uifaces/faces/twitter/damenleeturks/128.jpg"}}
+	{{#p-button type="primary" onClick=(action 'submit') icon="icon-chevron-rightcopyx" }}
 		primary
 	{{/p-button}}
 	<hr>
@@ -27,9 +25,9 @@
 	{{#p-button type="secondary" reverse=true onClick=(action 'submit')}}reverse secondary{{/p-button}}
 	{{#p-button type="danger" reverse=true onClick=(action 'submit')}}reverse danger{{/p-button}}
 	{{#p-button type="default" reverse=true disabled=true}}reverse default{{/p-button}}
-	{{#p-button type="primary" 
-		reverse=true 
-		onClick=(action 'submit')
-		icon="https://s3.amazonaws.com/uifaces/faces/twitter/damenleeturks/128.jpg"}}reverse
-		primary{{/p-button}}
+	{{#p-button type="primary" reverse=true onClick=(action 'submit') icon="icon-chevron-rightcopyx" }}reverse primary
+	{{/p-button}}
+	<div>
+		{{p-icon type="menu"}}
+	</div>
 </section>

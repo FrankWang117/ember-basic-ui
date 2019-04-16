@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import layout from '../templates/components/p-button';
+// import { draw } from 'ember-basic-ui/icon/iconfont';
 
 export default Component.extend({
 	layout,

@@ -1,5 +1,11 @@
 {{#if icon}}
-	<img class="btn-icon" src={{icon}} alt={{icon-alt}}>
+	{{p-icon type=icon}}
 {{/if}}
-{{text}}
-{{yield}}
+{{text}} {{yield
+  (hash
+    isFulfilled=isFulfilled
+    isPending=isPending
+    isRejected=isRejected
+    isSettled=isSettled
+  )
+}}
